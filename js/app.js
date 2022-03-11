@@ -13,11 +13,14 @@ const getReportedPosts = () => {
 
 const isLiked = (id) => {
     return likedPostsId?.length && !!likedPostsId.includes(id);
+    
 };
 
 const addToLiked = (id) => {
     likedPostsId.push(id); 
-    showPosts(posts);
+     showPosts(posts);
+    
+    console.log(likedPostsId)
 };
 
 const reportPost = (id) => {
@@ -28,7 +31,7 @@ const reportPost = (id) => {
 };
 
  const displayContent = (text) => {
-     return text.length < 30 ? text : text.slice(0, 30) +
+     return text.length < 30 ? 'text' : text.slice(0, 30) +
      "<span class='fw-bold'>... read more</span>";
     
  };
@@ -122,9 +125,9 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0]?.user}
                       </a>
-                      ${post.comments?.text}
+                     <p> ${post.comments[0]?.text}</p>
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
@@ -147,14 +150,17 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
     const likedPosts = getLikedPosts();
+    document.getElementById( "liked" ).innerHTML ='';
+   
     likedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
-        document.getElementById( "liked" ).value ='';
+       
     });
 };
 
 const displayReportedPosts = () => {
+  document.getElementById( "reported" ).innerHTML='';
     const reportedPosts = getReportedPosts();
      reportedPosts.forEach((post) => {
       const div = createPost(post);
