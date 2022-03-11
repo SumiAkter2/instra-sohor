@@ -17,7 +17,6 @@ const isLiked = (id) => {
 
 const addToLiked = (id) => {
     likedPostsId.push(id); 
-    // const likedPosts = posts.filter((post) => !likedPostsId.includes(post.id));
     showPosts(posts);
 };
 
@@ -63,7 +62,7 @@ const createPost = (post) => {
                     target="_blank"
                     class="post__avatar"
                   >
-                    <img src="${image}" alt="User Picture" />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="User Picture" alt="User Picture" />
                   </a>
                   <a href="#" class="post__user">phero</a>
                 </div>
@@ -78,7 +77,6 @@ const createPost = (post) => {
                   <img
                     class="post__media"
                     src="${image}"
-                    alt="Post Content"
                   />
                 </div>
               </div>
@@ -135,29 +133,32 @@ const createPost = (post) => {
 
 const showPosts = (posts) => {
     const productsContainer = document.getElementById( "posts" );
+  
     productsContainer.innerHTML = "";
-
     posts.forEach((post) => {
         const div = createPost(post);
         productsContainer.appendChild(div);
     });
+   
 };
 
 const displayLikedPosts = () => {
     const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
-      console.log(post);
         const div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
+        document.getElementById( "liked" ).value ='';
     });
 };
 
 const displayReportedPosts = () => {
     const reportedPosts = getReportedPosts();
      reportedPosts.forEach((post) => {
-        const div = createPost(post);
-        document.getElementById( "reported" ).appendChild(div);
+      const div = createPost(post);
+      document.getElementById( "reported" ).appendChild(div);
+      
      });
+    
 };
 
 const loadPosts = async () =>{
