@@ -20,7 +20,6 @@ const addToLiked = (id) => {
     likedPostsId.push(id); 
      showPosts(posts);
     
-    console.log(likedPostsId)
 };
 
 const reportPost = (id) => {
@@ -31,7 +30,7 @@ const reportPost = (id) => {
 };
 
  const displayContent = (text) => {
-     return text.length < 30 ? 'text' : text.slice(0, 30) +
+     return text.length < 30 ? text : text.slice(0, 30) +
      "<span class='fw-bold'>... read more</span>";
     
  };
