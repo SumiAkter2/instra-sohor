@@ -77,8 +77,25 @@
                 <h1>Reported posts</h1>
             </div>
         </main>
-        <section>
-            
+        <section class="container">
+            <h4>Q: How does JavaScript work?</h4>
+            <p>Ans:JavaScript works through V8 engine in a browser.It is high performance JavaScript. JavaScript is written in C++ when it is executed. When JavaScript code is opened in a browser, at first it is parsed &  made abstract syntex tree.Then it is converted to machinecode(ByteCode) by Interpreter ignition by Jit(Just in time) and compiler turbofan.Finally ,the page is shown to website. </p>
+            <h5>Q:What does JavaScript event loop do?</h5>
+            <p>  
+                Ans:Event loop is executing the JavaScript code.It's based on the concurrency model.Stack,Queue,Heap are associate with it.After  the stack is once again empty queue is processing.which Queue is message list to be proceed.Heap is allocated by object that is a memory and unstructured unlike queue and stack.
+            </p>
+<h5>
+    Q:Difference between  local storage and session storage?
+</h5>
+<p>
+    Ans:
+        1.At the end of page session,data in  local storage doesn't expired, but session storage is expired.
+        2.Storage capacity of local storage is 5 MB/10 MB .On the other hand, it is 5 MB for session storage.
+        3. Local storage is key value pairs, but session storage is name value pairs.
+        4.Local storage is accesible from any window but session storage is from same tab.
+        5.Local storage is worse choice than session storage 
+        .On the other hand,sesion storage is better than the first one.
+       </p>
         </section>
         <footer></footer>
 
@@ -86,3 +103,4 @@
         <script src="./js/app.js"></script>
     </body>
 </html>
+
